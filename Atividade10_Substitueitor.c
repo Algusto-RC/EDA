@@ -44,7 +44,7 @@ void editaTexto(/*char frase[10000], char palavraVelha[40], char palavraNova[40]
                 indicePV=0;
                 indiceARM=0;
 
-                frase[i] = frase[ctt];
+                frase[ctt] = frase[i];
                 memset(armazenador, '*', sizeof(armazenador));
 
             /*Responsavel por identificar se existe igualdade
@@ -72,14 +72,13 @@ void editaTexto(/*char frase[10000], char palavraVelha[40], char palavraNova[40]
                     for (int k = 0; k < qtdaPNova; k++)
                         frase[i-qtdaPVelha+k+1] = palavraNova[k];
                     
-
                     /*Trecho responsavel pela formatacao*/
                     if (qtdaPVelha > qtdaPNova)
                     {
-                        i=i-(qtdaPVelha-qtdaPNova);   
+                        i=i+(qtdaPVelha);   
                     }else if(qtdaPVelha < qtdaPNova)
                     {
-                        i=i+(qtdaPNova-qtdaPVelha);   
+                        i=i+(qtdaPNova);   
                     }
                 }
                 indiceARM++;
